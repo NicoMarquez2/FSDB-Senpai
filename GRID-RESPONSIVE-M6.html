@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body, html{
+                margin: 0px;
+                padding: 0px;
+                height: 100%;
+            }
+            body{
+                display: grid;
+                grid-template-areas: 'header header header'
+                                     'nav main aside';
+                grid-template-columns: 2fr 3fr 1fr;
+                grid-template-rows: 20% 80%;
+                gap: 5px;
+            }
+            header{
+                background-color: skyblue;
+                grid-area: header;
+            }
+            nav{
+                background-color: greenyellow;
+                grid-area: nav;
+            }
+            main{
+                background-color: red;
+                grid-area: main;
+            }
+            aside{
+                background-color: yellow;
+                grid-area: aside;
+            }
+            @media (max-width: 900px){
+                body{
+                display: grid;
+                grid-template-areas: 'header header'
+                                     'nav nav'
+                                     'main aside';
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 20% 20% 60%;
+                gap: 5px;
+                height: 99.5vh;
+            }
+            }
+            @media (max-width: 600px){
+                body{
+                display: grid;
+                grid-template-areas: 'header'
+                                     'nav'
+                                     'main'
+                                     'aside';
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 2fr 2fr 4fr;
+                gap: 5px;
+                height: 100vh;
+            }
+            }
+        </style>
+    </head>
+    <body>
+       <header>
+            HEADER
+       </header> 
+       <nav>
+            NAV
+       </nav>
+       <main>
+            MAIN
+       </main>
+       <aside>
+            ASIDE
+       </aside>
+    </body>
+</html>

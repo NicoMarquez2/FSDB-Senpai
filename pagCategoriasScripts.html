@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <style>
+        html,body{
+            margin:5px;
+            display:flex;
+            flex-direction: column;
+
+        }
+        .form-control:focus {
+        border-color: #157347;
+        outline-color: #157347;
+        box-shadow: inset 0 0px 1px #157347, 0 0 0.5px  #157347;
+        }
+        main{
+            margin-left: 20%;
+            margin-right: 20%;
+            justify-content: center;
+        }
+    </style>
+<body> 
+    <header>
+        <h1 class="row justify-content-center">Administrador de Categorías</h1>
+        <form class="row g-3 justify-content-center mt-4">
+            <div class="col-6">
+                <label class="visually-hidden">Categoría</label>
+                <input id="category" type="text" class="form-control outlinenone" placeholder="Ingrese una categoría">
+            </div>
+            <div class="col-auto">
+                <button id="add" type="button" class="btn btn-success mb-3">Guardar</button>
+            </div>
+            <div class="col-auto">
+                <button id="dltAll" type="button" class="btn btn-success mb-3">Borrar Todo</button>
+            </div>
+        </form>
+    </header>
+    <main>
+        <table class="table mt-4 ml">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Categorias</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="newrow">
+
+            </tbody>
+        </table>
+    </main>
+    <script>
+        const category = document.getElementById("category")
+        const add = document.getElementById("add")
+        const dlt = document.getElementById("dltAll")
+        const row = document.getElementById("newrow")
+        var contador = 0
+        add.addEventListener("click",saveCategory)
+        dlt.addEventListener("click", deleteAll)
+     
+
+        function saveCategory(){
+            const table = document.getElementById("newrow")
+            var tr = document.createElement("tr")
+            var th = document.createElement("th")
+            var tdActions = document.createElement("td")
+            var td = document.createElement("td")
+            th.textContent = contador
+            tdActions.innerHTML = '<i onclick="borrar()" class="bi bi-trash text-danger"></i>' + ' <i onclick="edit('+contador+')" class="bi bi-pencil-square text-primary"></i>'
+            tr.setAttribute("name","row"+contador)
+            td.textContent = category.value
+            td.setAttribute("id",contador)
+            tr.appendChild(th)
+            tr.appendChild(td)
+            tr.appendChild(tdActions)
+            table.appendChild(tr)
+            category.value = ""
+            contador++;
+        }
+
+        function borrar(){
+            const tacho = document.getElementsByClassName("bi-trash")[0]
+            tacho.parentNode.parentNode.remove()
+            contador--;
+        }
+
+        function edit(objeto){
+            const edit = document.getElementById(objeto)
+            category.value = edit.textContent
+            const confirm = document.getElementById("add")
+            confirm.addEventListener("click", confirm)
+        }
+
+        function deleteAll(){
+            const dlt = document.querySelectorAll("tr > td")
+            Array.from(dlt).forEach((value) => value.remove())
+        }
+        
+    </script>
+</body>
+</html>

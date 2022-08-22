@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: grid;
+                grid-template-areas: 'header header header'
+                                     'left-sidebar main right-sidebar'
+                                     'footer footer footer';
+                grid-template-rows: 1fr 5fr 1fr;
+                grid-template-columns: 1fr 6fr 2fr;
+                background-color: white;
+                gap: 5px;
+                max-height: 100vh;
+                max-width: 100vw;
+            }
+            header{
+                grid-area: header;
+                background-color:aqua;
+            }
+            main{
+                grid-area: main;
+                background-color:green;
+            }
+            #left_sidebar{
+                grid-area: left-sidebar;
+                background-color:red;
+            }
+            #right_sidebar{
+                grid-area: right-sidebar;
+                background-color:yellow;
+            }
+            footer{
+                grid-area: footer;
+                background-color:orange;
+                grid-template-columns: repeat(4,1fr);
+                gap: 20px;
+                justify-content: space-evenly;
+                align-items: center;
+                padding: 10px;
+            }
+            div{
+                background-color: crimson;
+            }
+        </style>
+    </head>
+    <body>
+            <header>HEADER</header>
+            <main>MAIN</main>
+            <div id="left_sidebar">LEFT SIDEBAR</div>
+            <div id="right_sidebar">RIGHT SIDEBAR</div>
+            <footer>
+                <div>
+                    footer 1
+                </div>
+                <div>
+                    footer 2
+                </div>
+                <div>
+                    footer 3
+                </div>
+                <div>
+                    footer4
+                </div>
+            </footer>
+    </body>
+</html>

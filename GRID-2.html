@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GRID 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            *{
+                margin: 3px;
+                padding: 0;
+            }
+            body{
+                display: grid;
+                grid-template-areas: 'primero primero primero primero'
+                                     'segundo tercero cuarto quinto'
+                                     'segundo sexto cuarto quinto'
+                                     'segundo sexto septimo quinto'
+                                     'segundo sexto octavo noveno';
+                grid-template-rows: 50% 1fr 1fr 1fr 1fr;
+                grid-template-columns: 25% 25% 25% 25%;
+                color: white;
+                gap: 5px;
+                height: 98vh;
+                width: 99%;
+                font-size: 40pt;
+            }
+            #primero{
+                grid-area: primero;
+                background-color: yellow;
+            }
+            #segundo{
+                grid-area: segundo;
+                background-color: yellow;
+            }
+            #tercero{
+                grid-area: tercero;
+                background-color: yellow;
+            }
+            #cuarto{
+                grid-area: cuarto;
+                background-color: yellow;
+            }
+            #quinto{
+                grid-area: quinto;
+                background-color: yellow;
+            }
+            #sexto{
+                grid-area: sexto;
+                background-color: yellow;
+            }
+            #septimo{
+                grid-area: septimo;
+                background-color: yellow;
+            }
+            #octavo{
+                grid-area: octavo;
+                background-color: yellow;
+            }
+            #noveno{
+                grid-area: noveno;
+                background-color: yellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="primero">1</div>
+        <div id="segundo">2</div>
+        <div id="tercero">3</div>
+        <div id="cuarto">4</div>
+        <div id="quinto">5</div>
+        <div id="sexto">6</div>
+        <div id="septimo">7</div>
+        <div id="octavo">8</div>
+        <div id="noveno">9</div>
+    </body>
+</html>

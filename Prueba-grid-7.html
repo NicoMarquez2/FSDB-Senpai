@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #header{
+                grid-area: 1/1/2/7;
+                background-color: aqua;
+            }
+            #footer{
+                grid-area: 4/1/5/7;
+                background-color: blue;
+            }
+            #main{
+                grid-area: 2/2/3/4;
+                background-color: yellowgreen;
+            }
+            #sidebar{
+                grid-area: 2/4/3/6;
+                background-color: blueviolet;
+            }
+            #twin1{
+                grid-area: 3/2/4/3;
+                background-color: orange;
+            }
+            #twin2{
+                grid-area: 3/3/4/6;
+                background-color: orange;
+            }
+            body{
+                display: grid;
+                gap: 5px;
+                grid-template-columns: 20% 30% repeat(3,10%) 20%;
+                grid-template-rows: 1fr 3fr 3fr 1fr;
+                height: 100vh;
+                width: 98.7vw;
+            }
+            @media (max-width: 700px){
+                body{
+                    display: grid;
+                    gap: 5px;
+                    grid-template-columns: 20% 60% 20%;
+                    grid-template-rows: 1fr 3fr 3fr 3fr 3fr 1fr;
+                    height: 1000vh;
+                }
+                #header{
+                grid-area: 1/1/2/4;
+                background-color: aqua;
+                }
+                #footer{
+                    grid-area: 4/1/5/4;
+                    background-color: blue;
+                }
+                #main{
+                    grid-area: 2/2/3/3;
+                    background-color: yellowgreen;
+                }
+                #sidebar{
+                    grid-area: 3/2/4/3;
+                    background-color: blueviolet;
+                }
+                #twin1{
+                    grid-area: 4/2/5/3;
+                    background-color: orange;
+                }
+                #twin2{
+                    grid-area: 5/2/6/3;
+                    background-color: orange;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">HEADER</header>
+        <main id="main">MAIN</main>
+        <div id="sidebar">SIDEBAR</div>
+        <footer id="footer">FOOTER</footer>
+        <div id="twin1">TWIN</div>
+        <div id="twin2">TWIN</div>
+    </body>
+</html>

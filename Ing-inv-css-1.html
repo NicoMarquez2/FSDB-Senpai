@@ -1,0 +1,96 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ing inversa 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                display: grid;
+                grid-template-areas: 'aside main';
+                grid-template-columns: 15% 85%;
+                height: 98vh;
+                width: 98vw;
+                gap: 10px;
+            }
+            aside{
+                display: grid;
+                grid-template-areas: 'aside-1'
+                                     'aside-2'
+                                     'aside-3';
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1.45fr 1.5fr;
+                gap: 10px;
+            }
+            main{
+                display: grid;
+                grid-template-areas: 'headline headline'
+                                     'image image'
+                                     'subjet subjet'
+                                     'text text'
+                                     'featured ads';
+                grid-template-columns: 80% 20%;
+                grid-template-rows: 1fr 4fr 0.5fr 0.5fr 4fr;
+                gap: 10px;
+            }
+            #aside-1{
+                grid-area: aside-1;
+                background-color: gray;
+            }
+            #aside-2{
+                grid-area: aside-2;
+                background-color: gray;
+            }
+            #aside-3{
+                grid-area: aside-3;
+                background-color: gray;
+            }
+            #image{
+                grid-area: image;
+                background-color: gray;
+            }
+            #headline{
+                grid-area: headline;
+                background-color: gray;
+            }
+            #subjet{
+                grid-area: subjet;
+                background-color: gray;
+            }
+            #text{
+                grid-area: text;
+                background-color: gray;
+            }
+            #featured{
+                grid-area: featured;
+                background-color: gray;
+            }
+            #ads{
+                grid-area: ads;
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+       <aside>
+            <div id="aside-1"><img src="#" alt=""></div>
+            <div id="aside-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est quidem nesciunt itaque asperiores labore nostrum sequi, alias recusandae debitis expedita hic odio praesentium, neque officia placeat sit temporibus facere ea.</div>
+            <div id="aside-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quo repudiandae cum cupiditate nesciunt assumenda voluptas autem ullam. Mollitia praesentium a excepturi harum quas molestiae, tenetur unde consectetur ratione impedit!</div>
+       </aside>
+        <main>
+            <div id="headline"><h1>HEADLINE</h1></div>
+            <div id="image"><img src="#" alt=""></div>
+            <div id="subjet"><h2>SUBJET</h2></div>
+            <div id="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim velit tempore, cum perferendis blanditiis deserunt facilis, ut omnis iusto soluta beatae eius eligendi adipisci! Soluta aut culpa vel beatae illo?</p></div>
+            <div id="featured">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ipsa quia, aperiam rerum quas necessitatibus sit, esse velit nostrum enim tempora obcaecati, odio commodi alias nihil ipsum eos cumque. Vel?
+            Mollitia, sunt cumque. Dignissimos, magnam perferendis. Architecto nostrum nihil harum nesciunt, ipsa minus odio tempore. Incidunt dolor nesciunt expedita voluptatibus atque rem, fugiat rerum nulla fuga omnis culpa minus unde!
+            Nesciunt voluptate culpa, officia earum in dolor dolorum nam possimus ducimus, voluptatem sapiente soluta provident assumenda accusantium, inventore quisquam pariatur. Sapiente ut vitae similique atque culpa amet ea ipsa tempora.
+            Molestiae dicta expedita explicabo placeat ad libero esse numquam velit suscipit labore, sint deleniti minus veritatis officiis! Natus, assumenda voluptates corrupti excepturi repudiandae quas distinctio commodi nulla fuga quis aliquid!
+            Maxime repellendus eligendi ea quidem recusandae? Earum aliquid eveniet ad explicabo nihil magnam, asperiores sit quibusdam nulla tempora! Amet optio expedita, sequi quo vero voluptatum officia. Tempore autem culpa sit.
+            Odit libero quisquam placeat deserunt alias unde distinctio modi asperiores animi est? Dolorem nemo aspernatur laboriosam quis deleniti? Possimus doloremque obcaecati nihil, numquam est necessitatibus nam accusantium consequuntur sunt nesciunt.
+            Reprehenderit quo, saepe eos unde facere, laboriosam optio magni voluptas facilis non alias mollitia ratione veniam cupiditate quia exercitationem. Officia earum possimus dolore rem ad ipsam quia accusamus veritatis inventore.</div>
+            <div id="ads">ADS</div>
+        </main>
+    </body>
+</html>

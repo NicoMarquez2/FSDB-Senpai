@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #grid-content{
+                display:grid;
+                grid-template-columns: 20% 60% 20%;
+                grid-template-rows: 20% 60% 20%;
+                grid-template-areas: 
+                    'header header header'
+                    'nav article ads'
+                    'nav footer footer';
+                background-color: yellow;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            #header{
+                grid-area: header;
+            }
+            #nav{
+                grid-area: nav;
+            }
+            #article{
+                grid-area: article;
+            }
+            #ads{
+                grid-area: ads;
+            }
+            #footer{
+                grid-area: footer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid-content">
+            <header id="header">HEADER</header>
+            <nav id="nav">NAV</nav>
+            <article id="article">ARTICLE</article>
+            <div id="ads">ADS</div>
+            <footer id="footer">FOOTER</footer>
+        </div>
+    </body>
+</html>

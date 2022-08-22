@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                display: grid;
+                grid-template-areas: 'aside main';
+                grid-template-columns: 30% 70%;
+                gap: 5px;
+                height: 100vh;
+            }
+            aside{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            main{
+                display: grid;
+                grid-template-columns: 70% 15% 15%;
+                grid-template-rows: repeat(14,1fr);
+                gap: 5px;
+                height: 100vh;
+            }
+            #upper-text, #main-image, #qualy, #reviews, #add, #buy, #other, #image-1, #image2{
+                background-color: rgb(157, 153, 153);
+            }
+            #upper-text{
+                grid-area: 1/1/2/4;
+            }
+            #main-image{
+                grid-area: 2/1/12/2;
+            }
+            #qualy{
+                grid-area: 2/2/3/3;
+            }
+            #reviews{
+                grid-area: 2/3/3/4;
+            }
+            #add{
+                grid-area: 3/2/4/4;
+            }
+            #buy{
+                grid-area: 4/2/5/4;
+            }
+            #other{
+                grid-area: 5/2/6/3;
+            }
+            #image-1{
+                grid-area: 6/2/7/3;
+            }
+            #image-2{
+                grid-area: 6/3/7/4;
+            }
+        </style>
+    </head>
+    <body>
+        <aside>
+            <header>HEADER</header>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+            <section>
+                <img src="#"/>
+                <span>XXXXXXXXXXXXXXX</span>
+            </section>
+        </aside>
+        <main>
+            <p id="upper-text">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <img id="main-image" src="#" alt="">
+            <span id="qualy">5 stars</span>
+            <span id="reviews">(10 reviews)</span>
+            <button id="add">Add to cart</button>
+            <button id="buy">Buy Now</button>
+            <span id="other">Other choices</span>
+            <img id="image-1" src="" alt="">
+            <img id="image-2" src="" alt="">
+        </main>
+    </body>
+</html>
