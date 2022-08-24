@@ -1,9 +1,9 @@
 let contador = 0;
 
 document.getElementById("boton").addEventListener('click', onClickForTitle)
-document.getElementById("magicButton").addEventListener('click', clickForMagic)
+document.getElementById("button").addEventListener('click', counterUp)
 
-function clickForMagic() {
+function counterUp() {
     const fatherDiv = document.getElementById("counter");
     const newContent = document.createTextNode(contador++);
     fatherDiv.innerHTML = contador;
