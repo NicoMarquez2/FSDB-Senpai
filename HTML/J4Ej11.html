@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -12,15 +8,125 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             body{
-                display: grid;
-                grid-template-columns: repeat(3,1fr);
-                grid-template-rows: repeat(3,1fr);
+                margin: 0;
+                padding: 0;
             }
+            #board{
+                background-color: black;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: 10px;
+                margin: 0 25% 0 25%;
+                padding: 0;
+                justify-content: center;
+            }
+
+            #nextTurn{
+                margin: 0;
+                padding: 0;
+            }
+
+            #box1, #box2,#box3,#box4,#box5,#box6,#box7,#box8,#box9{
+                background-color: white;
+            }
+            div{
+                padding: 90px;
+                border: 0;
+                background-color: white;
+                font-size: 50px;
+            }
+            
         </style>
     </head>
     <body>
+        <div id="nextTurn"> Empieza el jugador X</div>
+        <button id="reset board" onclick="resetBoard()">RESET BOARD</button>
+        <div id="board">
 
+        </div>
         
-        <script src="" async defer></script>
+        <script>
+            var turno = "X"
+            var jugadas = []
+
+            for(let i = 0; i<9; i++){
+                const div = document.createElement("div")
+                div.setAttribute("id", i)
+                document.getElementById("board").appendChild(div)
+                div.addEventListener('click', function (e){
+                    let id = e.target.id
+                    jugada(id)
+                })
+            }
+
+            function jugada(id){
+                let position = document.getElementById(id)
+                if(position.textContent != ""){
+                    alert("posición ya marcada")
+                    return
+                }
+
+                position.textContent= turno
+                jugadas[id]= turno
+                console.log(jugadas)
+                cambiarTurno()
+                verificarGanador(id)
+            }
+
+            function cambiarTurno(){
+                if(turno === "X"){
+                    turno = "O"
+                }
+                else{
+                    turno = "X"
+                }
+                document.getElementById("nextTurn").textContent = "El siguiente jugador es: " + turno
+            }
+
+            function verificarGanador(id){
+                let aux = (parseInt(id/3)*3)
+                console.log(aux)
+                if(jugadas[aux]==jugadas[aux+1] && jugadas[aux+1]==jugadas[aux+2]){
+                    document.getElementById("nextTurn").textContent = "¡¡El ganador es: " + jugadas[aux] + "!!"
+                    console.log("fila")
+                }
+
+                if(aux == 0){
+                    if(jugadas[id]==jugadas[id+3] && jugadas[id]==jugadas[id+6]){
+                        console.log("columna")
+                    }
+                }
+
+                if(jugadas[0]==jugadas[4] && jugadas[4]==jugadas[8] && jugadas[0]!=null && jugadas[4]!=null && jugadas[8]!=null){
+                    console.log("diagonal1")
+                    document.getElementById("nextTurn").textContent = "¡¡El ganador es: " + jugadas[0] + "!!"
+                }
+
+                if(jugadas[2]==jugadas[4] && jugadas[4]==jugadas[6] && jugadas[2]!=null && jugadas[4]!=null && jugadas[6]!=null){
+                    console.log("diagonal2")
+                    document.getElementById("nextTurn").textContent = "¡¡El ganador es: " + jugadas[2] + "!!"
+                }
+
+            }
+
+            function fullBoard(){
+                for(let i=0; i<9; i++){
+                    if(jugadas[i] == null){
+                        return false
+                    }
+                }
+                return true
+            }
+
+            function resetBoard(){
+                for(let i = 0; i < 9; i++){
+                    document.getElementById(i).textContent = ""
+                    jugadas[i] = null
+                }
+                turno = "X"
+                document.getElementById("nextTurn").textContent = "Empieza el jugador X"
+            }
+        </script>
     </body>
 </html>

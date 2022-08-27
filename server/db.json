@@ -1,3 +1,12 @@
 {
-  "categories": []
+  "categories": [
+    {
+      "description": "autos",
+      "id": 1
+    },
+    {
+      "description": "casas",
+      "id": 2
+    }
+  ]
 }
